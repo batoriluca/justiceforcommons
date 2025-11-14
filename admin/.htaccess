@@ -1,0 +1,13 @@
+RewriteEngine on
+
+#ErrorDocument 404 https://fattakse.com/404
+
+RewriteRule ^edit-attorney/(.*)?$ edit-attorney.php?id=$1 [QSA,L]
+RewriteRule ^edit-case-type/(.*)?$ edit-case-type.php?id=$1 [QSA,L]
+RewriteRule ^edit-court-update/(.*)?$ edit-court-update.php?id=$1 [QSA,L]
+RewriteRule ^edit-law-update/(.*)?$ edit-law-update.php?id=$1 [QSA,L]
+RewriteRule ^query/(.*)?$ query.php?id=$1 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
